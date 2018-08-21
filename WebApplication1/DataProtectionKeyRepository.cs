@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.DataProtection.Repositories;
+using Microsoft.AspNetCore.DataProtection.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Xml.Linq;
 
 namespace WebApplication1
@@ -9,7 +10,7 @@ namespace WebApplication1
     {
         public IReadOnlyCollection<XElement> GetAllElements()
         {            
-            return null;
+            return new ReadOnlyCollection<XElement>(new List<XElement>());
         }
 
         public void StoreElement(XElement element, string friendlyName)
